@@ -140,3 +140,56 @@ function createHeart(parent){
     heart.remove();
   }, 1800);
 }
+
+function showSurprise(){
+  const messages = [
+    "Eres oficialmente mi persona favorita.",
+    "Te gano bien fácil en plato.",
+    "Confieso que me gustó comer ese moco que tenías.",
+    "Algún día te va a gustar tanto el maíz como a mí.",
+    "Me encanta ver de cerca tu rostro.",
+    "Entonces chama... Todavía no sé qué pasó con el Guacamole??",
+    "Exámen de Españooool! Estoy ahora en el 'Establecimiento' ó 'Establecimienta'?",
+    "Era Establecimiento btw... :D",
+    "Ante ayer caminé 2.4KM, cuidado conmigo cuando camines ;). No sé cuánto es en miles, I bet you know",
+    "Chiste Chiste: Me sacaron de un groupchat de paracaidismo ... Se ve que no les CAÍA bien  XDD",
+    "Amo tu voz en todo momento, ternura linda",
+    "Todavía me acuerdo de ese momento cuando te tiraste ese peo en el ascensor. Todavía me cago de la risa",
+    "Un bonbon como tu nunca está de más en la vida",
+    "Quieres un segundo Chiste? BET!!.  - Qué dice una Cereza al verse en el espejo? ¿Ceré Eza? XDDD"
+
+  ];
+  const random = messages[Math.floor(Math.random()*messages.length)];
+  document.getElementById("surpriseText").textContent = random;
+}
+
+function measureLove(){
+  const percentage = Math.floor(Math.random()*20) + 80;
+  document.getElementById("loveFill").style.width = percentage + "%";
+  document.getElementById("loveText").textContent = percentage + "% confirmado oficialmente.";
+}
+
+function heartRain(){
+  for(let i=0;i<30;i++){
+    const heart = document.createElement("div");
+    heart.textContent = "💖";
+    heart.style.position = "fixed";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.top = "-20px";
+    heart.style.fontSize = "20px";
+    heart.style.opacity = 1;
+    heart.style.transition = "transform 3s linear, opacity 3s linear";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+      heart.style.transform = "translateY(100vh)";
+      heart.style.opacity = 0;
+    },50);
+
+    setTimeout(()=>{
+      heart.remove();
+    },3000);
+  }
+}
+
+
