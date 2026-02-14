@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mensaje Importante</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="contenedor">
+    <h1>
+        Tienes un <span class="destacado">mensaje importante</span> esperando.
+        <br>
+        <span class="pregunta">¿Quieres recibirlo?</span>
+    </h1>
+
+    <div class="botones">
+        <button class="si" onclick="accionSi()">Si</button>
+        <button class="no" id="botonNo">No</button>
+    </div>
+
+    <div class="mensaje-extra" id="mensajeNo">
+        Nope, no es un error de programación. No existe esta opción >:).<br>
+        PISTA: DALE A QUE SI!
+    </div>
+</div>
+
+<script>
+function accionSi() {
+    alert("WOW, llámenme visionario, sabía que ibas a dar click acá");
+    window.location.href = "segunda.html";
+}
+
+const botonNo = document.getElementById("botonNo");
+let contadorClicks = 0;
+
+botonNo.addEventListener("mouseover", () => {
+    moverBoton();
+});
+
+botonNo.addEventListener("click", () => {
+    contadorClicks++;
+
+    if (contadorClicks === 1) {
+        botonNo.textContent = "¿Segura?";
+    } else if (contadorClicks === 2) {
+        document.getElementById("mensajeNo").style.display = "block";
+    }
+
+    moverBoton();
+});
+
+function moverBoton() {
+    const x = Math.random() * 30 - 15; 
+    const y = Math.random() * 20 - 10; 
+    botonNo.style.transform = `translate(${x}px, ${y}px)`;
+}
+</script>
+
+</body>
+</html>
