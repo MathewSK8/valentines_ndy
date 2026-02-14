@@ -416,3 +416,18 @@ body{
   object-fit: cover;
   border-radius: 18px;
 }
+
+.signature-divider{
+  height: 1px;
+  margin: 22px 0 14px;
+  background: linear-gradient(90deg, transparent, rgba(178,58,72,0.6), transparent);
+}
+
+.signature{
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--rose-dark);
+  letter-spacing: 0.4px;
+  margin: 0;
+}
+
